@@ -123,7 +123,7 @@ def shareevent():
                 email1 = request.form['email1']
                 col.update_one({'email':email, 'eventname': name}, {'$push': {'email': email1 }})
 
-                return render_template('share-successful.html', email = email)
+                return render_template('share-successful.html', email1 = email1)
 
 
 
