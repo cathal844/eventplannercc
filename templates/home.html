@@ -1,0 +1,89 @@
+<h1>Event planner</h1>
+<a href="{{ url_for('create') }}" class="btn btn-info"
+               style="margin: 28px 28px 16px 0px; background-color: #D8BFD8; border-color: #D8BFD8; color: black; font-weight: bold">
+                Create an event
+            </a>
+
+<h3>Remove an event</h3>
+<h4>enter the name of the event you want to remove</h4>
+<form id="idremoveevent" class="form-horizontal" role="form" method=POST action="{{ url_for('removeevent') }}">
+    <input type="text" class="form-control" name="remove" placeholder="Event name">
+    <button type="submit" class="btn btn-primary btn-block">Remove</button>
+</form>
+
+
+<table style="width:100%" border="6">
+    <tr>
+      <th>Creator Name</th>
+      <th>Participants</th>
+      <th>Event name</th>
+      <th>Description</th>
+      <th>location</th>
+      <th>Start time</th>
+      <th>End time</th>
+    </tr>
+    {% for event in events %}
+    <tr>
+      <td>{{event.name}}</td>
+      <td>{{event.email}}</td>
+      <td>{{event.eventname}}</td>
+      <td>{{event.description}}</td>
+      <td>{{event.location}}</td>
+      <td>{{event.start_time}}</td>
+      <td>{{event.end_time}}</td>
+    </tr>
+    {% endfor %}
+    
+  </table>
+
+  <h3>Archive an event</h3>
+  <a href="{{ url_for('eventarchive') }}" class="btn btn-info"
+  style="margin: 28px 28px 16px 0px; background-color: #D8BFD8; border-color: #D8BFD8; color: black; font-weight: bold">
+   View arcived events
+</a>
+
+<h4>enter the name of the event you want to archive</h4>
+<form id="signupform" class="form-horizontal" role="form" method=POST action="{{ url_for('addtoarhive') }}">
+    <div style="margin-bottom:25px" class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input type="text" class="form-control" name="add" placeholder="event name" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Archive event</button>
+</form>
+
+
+
+<h3>Search for an event</h3>
+<h4>enter in the name of the event you want to search</h4>
+<form id="signupform" class="form-horizontal" role="form" method=POST action="{{ url_for('searchevents') }}">
+  <div style="margin-bottom:25px" class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input type="text" class="form-control" name="search" placeholder="event name" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block">Search event</button>
+</form>
+
+
+
+<h3>Share an event</h3>
+<a href="{{ url_for('shareevent') }}" class="btn btn-info"
+               style="margin: 28px 28px 16px 0px; background-color: #D8BFD8; border-color: #D8BFD8; color: black; font-weight: bold">
+                Click here to share an event
+            </a>
+
+
+<h3>click here to logout</h3>
+<a href="{{ url_for('logout') }}" class="btn btn-info"
+               style="margin: 28px 28px 16px 0px; background-color: #D8BFD8; border-color: #D8BFD8; color: black; font-weight: bold">
+                Logout
+            </a>
+
+
+
+
+
+
+
+

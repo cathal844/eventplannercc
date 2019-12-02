@@ -1,0 +1,43 @@
+<h1>Share an event with other users</h1>
+<h2>list of currently registered users</h2>
+<table style="width:100%">
+  {% for user in userss %}
+  <tr>
+    <td>{{user.email}}</td>
+  </tr>
+  {% endfor %}
+  
+</table>
+<form id="shareeventid" class="form-horizontal" role="form" method=POST action="{{ url_for('shareevent') }}">
+    <h2>enter the name of the event you want to share</h2>
+  <input type="text" class="form-control" name="eventname" placeholder="Event name">
+  <h2>enter the email of the user you want to share the event with</h2>
+  <input type="text" class="form-control" name="email1" placeholder="Email of user">
+  <button type="submit" class="btn btn-primary btn-block">share</button>
+</form>
+
+<table style="width:100%" border="6">
+    <tr>
+      <th>Creator Name</th>
+      <th>Participants</th>
+      <th>Event name</th>
+      <th>Description</th>
+      <th>location</th>
+      <th>Start time</th>
+      <th>End time</th>
+    </tr>
+    {% for event in events %}
+    <tr>
+      <td>{{event.name}}</td>
+      <td>{{event.email}}</td>
+      <td>{{event.eventname}}</td>
+      <td>{{event.description}}</td>
+      <td>{{event.location}}</td>
+      <td>{{event.start_time}}</td>
+      <td>{{event.end_time}}</td>
+    </tr>
+    {% endfor %}
+    
+  </table>
+
+<a href="{{ url_for('home') }}"> back to home</a>
