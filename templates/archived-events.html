@@ -1,21 +1,25 @@
 <table style="width:100%" border="6">
-        <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Event name</th>
-          <th>Event description</th>
-        </tr>
-        {% for event in events %}
-        <tr>
-          <td>{{event.name}}</td>
-          <td>{{event.eventname}}</td>
-          <td>{{event.description}}</td>
-          <td>{{event.location}}</td>
-          <td>{{event.start_time}}</td>
-          <td>{{event.end_time}}</td>
-        </tr>
-        {% endfor %}
-        
-      </table>
+  <tr>
+    <th>Creator Name</th>
+    <th>Participants</th>
+    <th>Event name</th>
+    <th>Description</th>
+    <th>location</th>
+    <th>Start time</th>
+    <th>End time</th>
+  </tr>
+  {% for event in events %}
+  <tr>
+    <td>{{event.name}}</td>
+    <td>{{event.email}}</td>
+    <td>{{event.eventname}}</td>
+    <td>{{event.description}}</td>
+    <td>{{event.location}}</td>
+    <td>{{event.start_time}}</td>
+    <td>{{event.end_time}}</td>
+  </tr>
+  {% endfor %}
+  
+</table>
 
 <a href="{{ url_for('home') }}"> back to home</a>
