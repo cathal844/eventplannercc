@@ -12,4 +12,3 @@ pycparser==2.19
 pymongo==3.9.0
 six==1.13.0
 Werkzeug==0.16.0
-setuptools==1.0
